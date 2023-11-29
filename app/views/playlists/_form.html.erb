@@ -1,7 +1,0 @@
-<%= simple_form_for (@playlist) do |f| %>
-  <p><%= f.input :name, placeholder: "Your playlist name", label: false, class: "form-inline" %></p>
-  <p><%= f.input :playlist_image, as: :file, label: false, class: "form-inline" %></p>
-  <p><%= f.input :description, placeholder: "Description", label: false, class: "form-inline" %></p>
-  <%= f.submit "SUBMIT", class: "btn btn-primary" %>
-<% end %>
-<%= link_to "Back to your playlists", playlists_path, class: "btn btn-success"%>
