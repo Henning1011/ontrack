@@ -1,5 +1,4 @@
 class PlaylistsController < ApplicationController
-  # just to change something - delete me
   def index
     @playlists = Playlist.all
   end
