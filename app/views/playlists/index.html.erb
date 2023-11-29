@@ -1,7 +1,0 @@
-<div class="container text-center">
-  <%= link_to 'Create playlist', new_playlist_path, class: "btn btn-danger" %>
-
-  <% @playlists.each do |playlist| %>
-    <h2><%= link_to playlist.name, playlist_path(playlist) %></h2>
-  <% end %>
-</div>
