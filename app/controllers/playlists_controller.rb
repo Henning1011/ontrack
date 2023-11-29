@@ -16,7 +16,7 @@ class PlaylistsController < ApplicationController
       @playlist = Playlist.new(playlist_params)
       @playlist.user = current_user
       @playlist.save
-      redirect_to playlists_path(@playlist)
+      redirect_to playlist_path(@playlist)
     else
       render :new
     end
