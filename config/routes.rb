@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Add Routes:
-  get "/playlists", to: "playlists#index", as: :playlists
-
+  resources :playlists
 
   get '/auth/spotify/callback', to: 'users#spotify'
 
