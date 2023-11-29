@@ -1,10 +1,11 @@
 class PlaylistsController < ApplicationController
+  before_action :set_playlist, only: %i[show edit update destroy]
+  
   def index
     @playlists = Playlist.all
   end
 
   def show
-    @playlist = Playlist.find(params[:id])
   end
 
   def new
@@ -18,29 +19,29 @@ class PlaylistsController < ApplicationController
       @playlist.save
       redirect_to playlist_path(@playlist)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @playlist = Playlist.find(params[:id])
   end
 
   def update
-    @playlist = Playlist.find(params[:id])
     @playlist.update(playlist_params)
-
     redirect_to playlist_path(@playlist)
   end
 
   def destroy
-    @playlist = Playlist.find(params[:id])
     @playlist.destroy
-
     redirect_to playlists_path
   end
+    
 private
 
+  def set_playlist
+    @playlist = Playlist.find(params[:id])
+  end
+    
   def playlist_params
     params.require(:playlist).permit(:name, :description, :playlist_image)
   end
