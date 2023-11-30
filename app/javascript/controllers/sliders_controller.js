@@ -8,7 +8,15 @@ export default class extends Controller {
     console.log("hello")
   }
 
-  getValues {
-    // this.acousticnessTarget.value...
+  getvalues() {
+    const acousticness = this.acousticnessTarget.value
+    console.log(this.danceabilityTarget.value)
+    console.log(this.energyTarget.value)
+    console.log(this.instrumentalnessTarget.value)
+    console.log(this.livenessTarget.value)
+    console.log(this.loudnessTarget.value)
+    console.log(this.speechinessTarget.value)
+    console.log(this.valenceTarget.value)
+    console.log(this.popularityTarget.value)
   }
 }
