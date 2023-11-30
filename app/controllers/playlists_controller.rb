@@ -1,6 +1,6 @@
 class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[show edit update destroy]
-  
+
   def index
     @playlists = Playlist.all
   end
@@ -33,15 +33,15 @@ class PlaylistsController < ApplicationController
 
   def destroy
     @playlist.destroy
-    redirect_to playlists_path
+    redirect_to playlists_path, status: :see_other
   end
-    
+
 private
 
   def set_playlist
     @playlist = Playlist.find(params[:id])
   end
-    
+
   def playlist_params
     params.require(:playlist).permit(:name, :description, :playlist_image)
   end
