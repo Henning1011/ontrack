@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #242632;
+  background-color: #242632;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -23,33 +23,35 @@
   padding-right: 20px;
 }
 
-.btn-success {
-  background-color: #FF2688;
-  border-color: #ff69b4;
+.btn-pink {
+  height: 40px;
+  width: 80px;
+  background-image: var(--Pink-gradient, linear-gradient(180deg, #FF2688 0%, #D1166B 100%));
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: transform 0.3s ease;
-
 }
 
+.btn-pink:hover,
+.btn-pink:active {
+  transform: scale(1.1);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar:hover {
+  transform: scale(1,1);
+}
 .nav-link {
-  color:white;
+  font-family: Poppins;
+  color: white;
+  text-align: center;
+  font-size: 16px;
 }
 
 .nav-link:hover {
   color: #FFFFFF;
-}
-
-.btn-success:hover,
-.btn-success:active {
-  background-color: #D1166B;
-  border-color: #D1166B;
-  transform: scale(1.1);
-}
-
-.btn-success:not(:disabled):not(.disabled):active,
-.btn-success:not(:disabled):not(.disabled).active,
-.show > .btn-success.dropdown-toggle {
-    background-color: #ff1493;
-    border-color: #ff1493;
 }
