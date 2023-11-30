@@ -1,0 +1,39 @@
+// Gradient shade, Darker pink
+.dark-pink {
+  fill: #D1166B;
+}
+
+// Gradient shade, Light pink
+.light-pink {
+  fill: #FF2688;
+}
+
+// Gradient, primary btns
+.btn-pink {
+  fill: var(--Pink-gradient, linear-gradient(180deg, #FF2688 0%, #D1166B 100%));
+}
+
+// Background
+.background {
+  background-color: #181A23;
+}
+
+// Background for cards
+.background-card {
+  background-color: #2C3140;
+}
+
+// Background for COMPONENTS AND SECONDARY BTNS
+.background-component {
+  background-color: #242632;
+}
+
+// headers, links, btns
+.text-white {
+  color: #FFF;
+}
+
+// Text Details, subheaders
+.text-grey {
+  color: #ABADB3;
+}
