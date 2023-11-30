@@ -28,9 +28,15 @@
         <% end %>
 
         <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag (session[:spotify_user]["images"][1]["url"]), class: "avatar", alt: "dropdown menu" if session[:spotify_user] %>
-          </a>
+          <% if session[:spotify_user]["images"].blank? %>
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag ("avatar.png"), class: "avatar", alt: "dropdown menu" if session[:spotify_user] %>
+            </a>
+            <% else %>
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag (session[:spotify_user]["images"][1]["url"]), class: "avatar", alt: "dropdown menu" if session[:spotify_user] %>
+            </a>
+            <% end %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "Your playlists", playlists_path, class: "dropdown-item" %>
             <%= link_to "Action", "#", class: "dropdown-item" %>
