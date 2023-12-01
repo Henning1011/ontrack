@@ -4,6 +4,12 @@ class TracksController < ApplicationController
   def index
   end
 
+  def search
+    if params[:query].present?
+      @tracks = RSpotify::Track.search(params[:query])
+    end
+  end
+
   private
 
   def set_track

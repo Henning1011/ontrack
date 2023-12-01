@@ -1,30 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<div class="row justify-content-center">
-
-  <div class="col-sm-8 my-3">
-    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-
-  <div class="col-sm-8 my-3">
-    <% if @tracks.present? %>
-      <ul class="list-group">
-        <% @tracks.each do |track| %>
-          <li class="list-group-item">
-            <%= link_to "#{track.artists.first.name} - #{track.name}", :controller => "tracks", :query => "#{track.id}" %>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= track.id %>?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: root_path, method: :get, class: "d-flex flex-column align-items-center search-form", id: "search-form-home" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control mb-4",
+              placeholder: "Search for a track/artist"
+          %>
+        <%= submit_tag "Search", name: "", class: "pink-btn" %>
+      <% end %>
+    </div>
+   </div>
 </div>
