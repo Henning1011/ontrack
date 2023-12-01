@@ -19,3 +19,18 @@
   border: none;
   text-decoration: none;
 }
+
+.btn-pink {
+  height: 40px;
+  width: 80px;
+}
+
+.pink-btn:hover,
+.pink-btn:active {
+  transform: scale(1.1);
+}
+
+#login-btn {
+  height: 40px;
+  width: 80px;
+}
