@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if params[:query].present?
-      @tracks = RSpotify::Track.search(params[:query])
+      redirect_to search_path(query: params[:query])
     end
   end
 end
