@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon align-items-center">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://i.postimg.cc/TPq6FYXX/OnTrack.png" %>
+      <%= image_tag "OnTrack.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
       <% else %>
       <%# User is not signed in to our app %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link btn-pink text-center" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link pink-btn text-center", id: "login-btn" %>
         </li>
       <% end %>
       </ul>
