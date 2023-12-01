@@ -1,5 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon align-items-center">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://i.postimg.cc/TPq6FYXX/OnTrack.png" %>
@@ -14,14 +13,10 @@
 
       <% if user_signed_in? %>
       <%# User is signed in to our app %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-
         <% if session[:spotify_user].nil? %>
         <%# User is not connected to Spotify %>
           <li class="nav-item">
-            <%= link_to 'Connect with Spotify', '/auth/spotify', method: :post %>
+            <%= link_to 'Connect with Spotify', '/auth/spotify', method: :post, class:"nav-link"%>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,7 +58,7 @@
       <% else %>
       <%# User is not signed in to our app %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link btn-pink text-center" %>
         </li>
       <% end %>
       </ul>
