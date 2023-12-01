@@ -1,0 +1,17 @@
+.form-range {
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.form-range:hover {
+  opacity: 1;
+}
+
+.form-label {
+  color: white;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
