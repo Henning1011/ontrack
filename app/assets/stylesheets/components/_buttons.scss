@@ -34,3 +34,34 @@
   height: 40px;
   width: 80px;
 }
+
+.all-playlists-btn {
+  // width: 600px;
+  height: 48px;
+  // padding: 12px 120px;
+  padding-top: 12px;
+  // flex-shrink: 0;
+  // border-radius: 54px;
+  color: white;
+  border: none;
+  text-decoration: none;
+}
+
+.create-playlist-btn {
+  width: 180px;
+  height: 48px;
+  // padding: 12px 20px;
+  padding-top: 12px;
+  // flex-shrink: 0;
+  // border-radius: 54px;
+  color: white;
+  border: none;
+  text-decoration: none;
+}
+
+.all-playlists-btn:hover,
+.all-playlists-btn:active,
+.create-playlist-btn:hover,
+.create-playlist-btn:active {
+  transform: scale(1.1);
+}
