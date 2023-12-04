@@ -3,7 +3,7 @@
   <div class="playlist_header">
 
     <div class="playlist_image_container">
-      <% if @playlist.playlist_image.attached? %>
+      <% if @playlist.playlist_image.present? %>
           <%= image_tag @playlist.playlist_image, class: "playlist_image", alt: "Playlist Image" %>
         <% else %>
           <p>No playlist image available</p>
