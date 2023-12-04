@@ -1,0 +1,23 @@
+.playlist_header {
+  display: flex;
+}
+
+.playlist_image {
+  height: 280px;
+  width: 280px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.text-btns {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+
+.playlist_btns {
+  display: flex;
+  justify-content: space-evenly;
+}

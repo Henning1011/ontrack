@@ -6,6 +6,7 @@ class PlaylistsController < ApplicationController
   end
 
   def show
+    @playlist
   end
 
   def new
@@ -17,7 +18,7 @@ class PlaylistsController < ApplicationController
       @playlist = Playlist.new(playlist_params)
       @playlist.user = current_user
       @playlist.save
-      redirect_to playlist_path(@playlist)
+      redirect_to playlist_path(@playlist.id)
     else
       render :new, status: :unprocessable_entity
     end
