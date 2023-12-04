@@ -1,0 +1,9 @@
+<%= form_with url: search_path, method: :get, class: "d-flex search-form" do %>
+<%= text_field_tag :query,
+      nil,
+      class: "form-control",
+      id: "search-bar-corner",
+      placeholder: "Search again?"
+  %>
+<%= submit_tag "Search", name: "", class: "d-none" %>
+<% end %>
