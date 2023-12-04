@@ -12,9 +12,7 @@
   margin-top: 15px;
 }
 
-
-
-.form-label {
+.faders-label {
   display: flex;
   color: white;
   font-size: 12px;
@@ -25,7 +23,7 @@
   flex: 1 150px;
 }
 
-.form-range::-webkit-slider-runnable-track {
+.faders-range::-webkit-slider-runnable-track {
   display: flex;
   -webkit-appearance: none;
   appearance: none;
@@ -37,7 +35,7 @@
   background: #ABADB3;
 }
 
-.form-range::-webkit-slider-thumb {
+.faders-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   height: 12px;
