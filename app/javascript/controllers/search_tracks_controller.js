@@ -11,7 +11,8 @@ export default class extends Controller {
       .then(response => response.text())
       .then((data) => {
         console.log("Received data:", data);
-        this.listTarget.innerHTML = data
+        this.listTarget.outerHTML = data
       })
+    .catch(error => console.error('Error updating:', error));
   }
 }

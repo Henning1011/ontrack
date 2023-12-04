@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
-
     <div data-controller="search-tracks">
-      <%= form_with url: search_path, method: :get, html: {data: {search_tracks_target: "form"}} do |f| %>
+    <%= form_with url: search_path, method: :get, html: {data: {search_tracks_target: "form"}} do |f| %>
         <%= f.text_field :query,
                           class: " d-flex form-control search-form",
                           id: "search-form-search",
@@ -13,26 +12,7 @@
                           }
                           %>
       <% end %>
-
-      <div data-search-tracks-target="list">
-        <% if @tracks.present? %>
-          <ul>
-          <% @tracks.each do |track| %>
-            <li class="list-group-item">
-            <div class="card track-card border-0">
-              <div class="card-body">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= track.id %>?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <div>
-                <%= link_to "That's the vibe!", { controller: 'tracks', query: track.id }, class: 'pink-btn-link' %>
-                </div>
-              </div>
-            </div>
-            </li>
-          <% end %>
-          </ul>
-        <% end %>
-      </div>
-
+      <%= render "list", tracks: @tracks %>
     </div>
   </div>
 </div>

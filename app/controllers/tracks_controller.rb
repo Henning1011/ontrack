@@ -4,13 +4,18 @@ class TracksController < ApplicationController
   def index
     respond_to do |format|
       format.html
-      format.text { render partial: "tracks/search", locals: {tracks: @tracks}, formats: [:html] }
+      format.text { render partial: "tracks/list", locals: {tracks: @tracks}, formats: [:html] }
     end
   end
 
   def search
     if params[:query].present?
     @tracks = RSpotify::Track.search(params[:query])
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "tracks/list", locals: {tracks: @tracks}, formats: [:html] }
     end
   end
 
