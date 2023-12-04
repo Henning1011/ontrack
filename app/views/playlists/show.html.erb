@@ -1,9 +1,7 @@
-<div class="container text-center">
-  <h2><%= @playlist.name %></h2>
+<div class="container">
+  <h1><%= @playlist.name %></h1>
 
-  <div class="container text-center">
-    <%= link_to 'Edit playlist', edit_playlist_path, class: "btn btn-danger" %>
+    <%= link_to 'Edit playlist', edit_playlist_path, class: "pink-btn-link" %>
     <%= link_to "Delete your playlist", playlist_path(@playlist), data: {turbo_method: :delete, turbo_confirm: "Do you want to delete your playlist?"}, class: "btn btn-danger"%>
     <%= link_to "Back to your playlists", playlists_path, class: "btn btn-success"%>
-  </div>
 </div>
