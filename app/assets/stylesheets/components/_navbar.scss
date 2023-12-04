@@ -43,7 +43,7 @@
   content: "";
   color:white;
   position: absolute;
-  z-index: -1;
+  /*z-index: -1;*/
   left: 50%;
   right: 50%;
   bottom: 0;
@@ -60,6 +60,6 @@
   color: white;
 }
 .nav-link:hover:before, .nav-link:focus:before, .nav-link:active:before {
-  left: 10%;
-  right: 10%;
+  left: 6%;
+  right: 6%;
 }
