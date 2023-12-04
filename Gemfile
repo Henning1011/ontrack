@@ -58,6 +58,8 @@ group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+  # Adding PRY (samuel)
+  gem 'pry', '~> 0.14.2'
 end
 
 group :development do
