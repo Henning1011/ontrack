@@ -7,10 +7,11 @@
   padding: 20px 150px;
 }
 
-.sliders{
+.slider-item {
   display: flex;
   margin-top: 15px;
 }
+
 
 .faders-label {
   display: flex;
@@ -19,8 +20,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-right: 10px;
-  flex: 1 150px;
+  flex: 1 160px;
 }
 
 .faders-range::-webkit-slider-runnable-track {
