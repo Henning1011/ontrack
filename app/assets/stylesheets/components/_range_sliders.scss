@@ -1,17 +1,49 @@
-.form-range {
-  opacity: 0.7;
-  transition: opacity .2s;
+.sliders-container {
+  background-color: #2C3140;
+  padding: 40px;
 }
 
-/* Mouse-over effects */
-.form-range:hover {
-  opacity: 1;
+.sliders-mini-container {
+  padding: 20px 150px;
 }
+
+.sliders{
+  display: flex;
+  margin-top: 15px;
+}
+
+
 
 .form-label {
+  display: flex;
   color: white;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin-right: 10px;
+  flex: 1 150px;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  display: flex;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+  height: 2px;
+  background: #ABADB3;
+}
+
+.form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  background-color: #D61C70;
+  border-radius: 50%;
+  border: none;
+  transition: .2s ease-in-out;
 }

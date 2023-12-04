@@ -23,7 +23,7 @@ export default class extends Controller {
     const url = `https://api.spotify.com/v1/recommendations?limit=10&seed_tracks=${spotifyId}&target_acousticness=${v_acousticness}&target_danceability=${v_danceability}&target_energy=${v_energy}&target_instrumentalness=${v_instrumentalness}&target_liveness=${v_liveness}&target_loudness=${v_loudness}&target_popularity=${v_popularity}&target_speechiness=${v_speechiness}&target_valence=${v_valence}`
     fetch(url, {
       method: "GET",
-      headers: { "Authorization": "Bearer BQCQ0OUT9lFamrIBjJunWb4hVnltoEcR94sUxKXIYeEAHOr0wHAmTeX8SnHLpZKBpK669k7-v-m5eTpFjd-R36GFe0yVHJZrK4VM9ZBuXAUk6TJkVng" },
+      headers: { "Authorization": "Bearer BQAUArUWCIi6w9mXYkUV71WI7RnFtSZm3me43nqVC2lm7SmHi1-bkkG9Jbg0sC6S-zTUyt0Q4podiXIoyMdzvPop7R9CvjwJ0HrdKbppKEqcff3UIF0" },
     })
     .then(response => response.json())
     .then((data) => {
