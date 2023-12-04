@@ -1,6 +1,6 @@
 <%= form_with url: search_path, method: :get, class: "d-flex search-form" do %>
 <%= text_field_tag :query,
-      params[:query],
+      nil,
       class: "form-control",
       id: "search-bar-corner",
       placeholder: "Search again?"
