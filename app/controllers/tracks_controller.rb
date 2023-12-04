@@ -2,10 +2,6 @@ class TracksController < ApplicationController
   before_action :set_track, only: %i[index]
 
   def index
-    respond_to do |format|
-      format.html
-      format.text { render partial: "tracks/list", locals: {tracks: @tracks}, formats: [:html] }
-    end
   end
 
   def search
