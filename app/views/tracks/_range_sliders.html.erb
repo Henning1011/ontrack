@@ -24,7 +24,7 @@
         <%= f.label :valence, "Valence", class: "form-label faders-label" %>
         <%= f.range_field :valence, class: "form-range faders-range", value: @track.audio_features.valence, in:0..1, step:0.0001 %>
         <%= f.label :popularity, "Popularity", class: "form-label faders-label" %>
-        <%= f.range_field :popularity, class: "form-range faders-range", value: @track.popularity, in:0..100, step:0.01 %>
+        <%= f.range_field :popularity, class: "form-range faders-range", value: @track.popularity, in:0..100, step:1 %>
         <%= f.submit "Submit", class: "pink-btn"%>
       <% end %>
     </div>
