@@ -1,14 +1,20 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
-      <%= form_with url: root_path, method: :get, class: "d-flex flex-column align-items-center search-form", id: "search-form-home" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control mb-4",
-              placeholder: "Search for a track/artist"
-          %>
-        <%= submit_tag "Search", name: "", class: "pink-btn" %>
-      <% end %>
+      <div data-controller="search-tracks">
+      <%= form_with url: "#", method: :get, class: "d-flex flex-column align-items-center search-form", id: "search-form-home", html: {data: {search_tracks_target: "form"}} do |f| %>
+          <%= f.text_field :query,
+                            class: " d-flex form-control search-form, mb-4",
+                            id: "search-form-search",
+                            value: params[:query],
+                            data: {
+                              search_tracks_target: "input",
+                              action: "keyup->search-tracks#update"
+                            }
+                            %>
+        <% end %>
+        <%= render "tracks/list", tracks: @tracks %>
+      </div>
     </div>
-   </div>
+  </div>
 </div>

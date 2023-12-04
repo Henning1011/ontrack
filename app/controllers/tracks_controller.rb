@@ -7,7 +7,12 @@ class TracksController < ApplicationController
   def search
     # binding.pry
     if params[:query].present?
-      @tracks = RSpotify::Track.search(params[:query])
+    @tracks = RSpotify::Track.search(params[:query])
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "tracks/list", locals: {tracks: @tracks}, formats: [:html] }
     end
   end
 
