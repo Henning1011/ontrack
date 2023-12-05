@@ -3,27 +3,13 @@
     <ul>
     <% @tracks.each do |track| %>
 
-
-      <li class="list-group-item">
-      <div class="card track-card border-0">
-        <div class="card-body">
-          <%# <%= link_to "#{track.album[6].images[0].url}",{ controller: 'tracks', query: track.artists[0].name }, class: "nav-link all-playlists-btn" %> %>
-
-
-          <%= link_to "#{track.name}",{ controller: 'tracks', query: track.name }, class: "nav-link all-playlists-btn" %>
-          <%= link_to "#{track.artists[0].name}",{ controller: 'tracks', query: track.artists[0].name }, class: "nav-link all-playlists-btn" %>
-          <%= link_to "#{track.duration_ms}",{ controller: 'tracks', query: track.duration_ms }, class: "nav-link all-playlists-btn" %>
-
-          <div>
-          <%= link_to "That's the vibe!", { controller: 'tracks', query: track.id }, class: 'pink-btn-link' %>
-          </div>
+      <div class="card track-card-search">
+        <div class="card-body card-body-search">
+            <%= image_tag (track.album.images.first["url"]), class: "cover" %>
+            <%= link_to "#{track.name}",{ controller: 'tracks', query: track.id }, class: "text-title" %>
+            <%= link_to "#{track.artists[0].name}",{ controller: 'tracks', query: track.artists[0].name }, class: "text-artist" %>
         </div>
       </div>
-      </li>
-
-          <%= link_to "#{track.artists}",{ controller: 'tracks', query: track.artists }, class: %>
-
-
     <% end %>
     </ul>
   <% end %>
