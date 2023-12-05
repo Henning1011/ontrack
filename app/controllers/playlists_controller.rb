@@ -43,6 +43,6 @@ private
   end
 
   def playlist_params
-    params.require(:playlist).permit(:name, :description, :playlist_image)
+    params.require(:playlist).permit(:name, :description, :photo)
   end
 end
