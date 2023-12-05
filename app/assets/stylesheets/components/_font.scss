@@ -62,8 +62,7 @@ h1 {
 }
 
 h3 {
-  color: #FFF;
-  font-family: Poppins;
+  color: #ffffff;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -87,4 +86,25 @@ p {
 
 .text-60:hover {
   color: white;
+}
+
+.text-btn {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+}
+
+.text-btn:hover {
+  font-weight: 600;
+}
+
+.h3-link {
+  color: #ffffff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
 }

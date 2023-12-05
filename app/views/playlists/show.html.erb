@@ -1,9 +1,31 @@
-<div class="container text-center">
-  <h2><%= @playlist.name %></h2>
+<div class="container">
 
-  <div class="container text-center">
-    <%= link_to 'Edit playlist', edit_playlist_path, class: "btn btn-danger" %>
-    <%= link_to "Delete your playlist", playlist_path(@playlist), data: {turbo_method: :delete, turbo_confirm: "Do you want to delete your playlist?"}, class: "btn btn-danger"%>
-    <%= link_to "Back to your playlists", playlists_path, class: "btn btn-success"%>
+  <div class="playlist_header">
+
+    <div class="playlist_image_container">
+      <% if @playlist.photo.present? %>
+          <%= cl_image_tag @playlist.photo.key, class: "playlist_image", alt: "Playlist Image" %>
+        <% else %>
+          <p>No playlist image available</p>
+        <% end %>
+    </div>
+
+    <div class="text-btn-div">
+      <div class="page_title">
+        <h1><%= @playlist.name %></h1>
+        <% if @playlist.description? %>
+          <p><%= @playlist.description %></p>
+        <% else %>
+          <p><%= @playlist.name %> was created by <%= current_user.email %> on <%= @playlist.created_at.strftime('%B of %Y') %>.</p>
+        <% end %>
+      </div>
+
+        <div class="playlist_btns">
+          <%= link_to 'Edit playlist', edit_playlist_path, class: "text-btn" %>
+          <%= link_to "Delete your playlist", playlist_path(@playlist), data: {turbo_method: :delete, turbo_confirm: "Do you want to delete your playlist?"}, class: "text-btn"%>
+          <%= link_to "Back to your playlists", playlists_path, class: "text-btn"%>
+        </div>
+      </div>
+
   </div>
 </div>

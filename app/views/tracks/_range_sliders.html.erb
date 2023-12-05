@@ -4,29 +4,48 @@
 
   <div class="sliders-mini-container">
 
-    <div class="sliders">
-      <%= form_with url: "/enhanced_search", method: "get" do |f| %>
-        <%= f.hidden_field :spotify_id, value: @track.id %>
-        <%= f.label :acousticness, "Acousticness", class: "form-label faders-label" %>
+
+    <%= form_with url: "/enhanced_search", method: "get" do |f| %>
+      <%= f.hidden_field :spotify_id, value: @track.id %>
+      <div class="slider-item">
+        <%= f.label :acousticness, "acousticness", class: "form-label faders-label" %>
         <%= f.range_field :acousticness, class: "form-range faders-range", value: @track.audio_features.acousticness, in:0..1, step:0.0001 %>
-        <%= f.label :danceability, "Danceability", class: "form-label faders-label" %>
+      </div>
+      <div class="slider-item">
+        <%= f.label :danceability, "danceability", class: "form-label faders-label" %>
         <%= f.range_field :danceability, class: "form-range faders-range", value: @track.audio_features.danceability, in:0..1, step:0.0001 %>
-        <%= f.label :energy, "Energy", class: "form-label faders-label" %>
+      </div>
+      <div class="slider-item">
+        <%= f.label :energy, "energy", class: "form-label faders-label" %>
         <%= f.range_field :energy, class: "form-range faders-range", value: @track.audio_features.energy, in:0..1, step:0.0001 %>
-        <%= f.label :instrumentalness, "Instrumentalness", class: "form-label faders-label" %>
+      </div>
+      <div class="slider-item">
+        <%= f.label :instrumentalness, "instrumentalness", class: "form-label faders-label" %>
         <%= f.range_field :instrumentalness, class: "form-range faders-range", value: @track.audio_features.instrumentalness, in:0..1, step:0.0001 %>
-        <%= f.label :liveness, "Liveness", class: "form-label faders-label" %>
+      </div>
+      <div class="slider-item">
+        <%= f.label :liveness, "liveness", class: "form-label faders-label" %>
         <%= f.range_field :liveness, class: "form-range faders-range", value: @track.audio_features.liveness, in:0..1, step:0.0001 %>
-        <%= f.label :loudness, "Loudness", class: "form-label faders-label" %>
+      </div>
+      <div class="slider-item">
+        <%= f.label :loudness, "loudness", class: "form-label faders-label" %>
         <%= f.range_field :loudness, class: "form-range faders-range", value: @track.audio_features.loudness, in:-60..0, step:0.006 %>
-        <%= f.label :speechiness, "Speechiness", class: "form-label faders-label" %>
+      </div>
+      <div class="slider-item">
+        <%= f.label :speechiness, "speechiness", class: "form-label faders-label" %>
         <%= f.range_field :speechiness, class: "form-range faders-range", value: @track.audio_features.speechiness, in:0..1, step:0.0001 %>
-        <%= f.label :valence, "Valence", class: "form-label faders-label" %>
+      </div>
+      <div class="slider-item">
+        <%= f.label :valence, "valence", class: "form-label faders-label" %>
         <%= f.range_field :valence, class: "form-range faders-range", value: @track.audio_features.valence, in:0..1, step:0.0001 %>
-        <%= f.label :popularity, "Popularity", class: "form-label faders-label" %>
+      </div>
+      <div class="slider-item">
+        <%= f.label :popularity, "popularity", class: "form-label faders-label" %>
         <%= f.range_field :popularity, class: "form-range faders-range", value: @track.popularity, in:0..100, step:1 %>
-        <%= f.submit "Submit", class: "pink-btn"%>
-      <% end %>
-    </div>
+      </div>
+      <div class="slider-item d-flex justify-content-center">
+        <%= f.submit "This is it!", class: "pink-btn"%>
+      </div>
+    <% end %>
   </div>
 </div>

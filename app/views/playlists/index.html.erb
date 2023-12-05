@@ -1,7 +1,34 @@
-<div class="container text-center">
-  <%= link_to 'Create playlist', new_playlist_path, class: "btn btn-danger" %>
+<div class="container">
+  <div class="container-header-flex">
+    <div class="title">
+      <h1>Playlists</h1>
+    </div>
+    <div class="create-playlist">
+      <%= link_to 'Create playlist', new_playlist_path, class: "pink-btn-link" %>
+    </div>
+  </div>
 
-  <% @playlists.each do |playlist| %>
-    <h2><%= link_to playlist.name, playlist_path(playlist) %></h2>
-  <% end %>
+  <div class="container-outer-flex">
+    <% @playlists.each do |playlist| %>
+      <a href="<%= playlist_path(playlist) %>" class="card-playlist">
+        <% if playlist.photo.present? %>
+          <%= cl_image_tag playlist.photo.key, class: "playlist-card-image", alt: "Playlist Image" %>
+        <% else %>
+          <p class="playlist-card-image">No playlist image available</p>
+        <% end %>
+        <div class="card-playlist-infos">
+          <div class="card-playlist-title">
+            <h3><%= playlist.name %></h3>
+          </div>
+          <div class="card-playlist-description">
+            <% if playlist.description? %>
+              <p><%= playlist.description %></p>
+            <% else %>
+              <p><%= playlist.name %> was created by <%= current_user.email %> on <%= playlist.created_at.strftime('%B of %Y') %>.</p>
+            <% end %>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
 </div>
