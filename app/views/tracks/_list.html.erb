@@ -2,16 +2,14 @@
   <% if @tracks.present? %>
     <ul>
     <% @tracks.each do |track| %>
-      <li class="list-group-item">
-      <div class="card track-card border-0">
-        <div class="card-body">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= track.id %>?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          <div>
-          <%= link_to "That's the vibe!", { controller: 'tracks', query: track.id }, class: 'pink-btn-link' %>
-          </div>
+
+      <div class="card track-card-search">
+        <div class="card-body card-body-search">
+            <%= image_tag (track.album.images.first["url"]), class: "cover" %>
+            <%= link_to "#{track.name}",{ controller: 'tracks', query: track.id }, class: "text-title" %>
+            <%= link_to "#{track.artists[0].name}",{ controller: 'tracks', query: track.artists[0].name }, class: "text-artist" %>
         </div>
       </div>
-      </li>
     <% end %>
     </ul>
   <% end %>
