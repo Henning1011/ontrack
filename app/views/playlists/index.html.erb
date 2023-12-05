@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="container1">
+  <div class="container-header-flex">
     <div class="title">
       <h1>Playlists</h1>
     </div>
@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="container2">
+  <div class="container-outer-flex">
     <% @playlists.each do |playlist| %>
       <a href="<%= playlist_path(playlist) %>" class="card-playlist">
         <% if playlist.photo.present? %>
