@@ -1,4 +1,4 @@
-// Specific CSS for your home-page
+/* Specifičan CSS za vašu početnu stranicu */
 body {
   background-color: #181A23;
 }
@@ -15,28 +15,22 @@ body {
 #search-form-search {
   border-radius: 25px;
   border: none;
-  color: black;
+  color: rgba(255, 255, 255, 0.6);
   background-color: #242632;
-}
-
-#search-form-search:focus {
-  outline: none;
-  border: 2px solid #181A23;
-  background-color: white;
-}
-
-
-.position-relative {
-  width: 100%;
-}
-
-.search-input {
   width: 700px;
   padding: 6px 16px;
   font-size: 15px;
   line-height: normal;
-  border-radius: 5px;
-  background-color: #242632;
+}
+
+#search-form-search:focus {
+  outline: none;
+  color: black;
+  background-color: white;
+}
+
+.position-relative {
+  width: 100%;
 }
 
 .search-icon {
