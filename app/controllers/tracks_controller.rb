@@ -24,8 +24,8 @@ class TracksController < ApplicationController
       target_energy: params[:energy],
       target_instrumentalness: params[:instrumentalness],
       target_liveness: params[:liveness],
-      # target_loudness: params[:loudness],
-      # target_speechiness: params[:speechiness],
+      target_loudness: params[:loudness],
+      target_speechiness: params[:speechiness],
       target_valence: params[:valence],
       target_popularity: params[:popularity]
     )
