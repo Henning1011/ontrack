@@ -43,9 +43,9 @@
         <%= f.label :popularity, "popularity", class: "form-label faders-label" %>
         <%= f.range_field :popularity, class: "form-range faders-range", value: @track.popularity, in:0..100, step:1 %>
       </div>
-    <div class="slider-item d-flex justify-content-center">
-      <%= f.submit "This is it!", class: "pink-btn"%>
-    </div>
+      <div class="slider-item d-flex justify-content-center">
+        <%= f.submit "This is it!", class: "pink-btn"%>
+      </div>
     <% end %>
   </div>
 </div>

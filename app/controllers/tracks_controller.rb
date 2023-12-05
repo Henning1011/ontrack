@@ -29,6 +29,7 @@ class TracksController < ApplicationController
       target_valence: params[:valence],
       target_popularity: params[:popularity]
     )
+    @playlists = Playlist.where(user: current_user)
   end
 
   private

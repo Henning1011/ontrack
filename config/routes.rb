@@ -6,10 +6,13 @@ Rails.application.routes.draw do
 
   # Add Routes:
   resources :playlists
+  get '/playlists/add_one', to: 'playlists#add_one'
 
   get '/auth/spotify/callback', to: 'users#spotify'
 
   resources :tracks
+
+  post 'playlist_tracks/:playlist_id/:spotify_id', to: 'playlist_tracks#create', as: :playlist_tracks
 
   get '/search', to: 'tracks#search'
   get '/enhanced_search', to: 'tracks#enhanced_search'
