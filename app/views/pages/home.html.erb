@@ -5,8 +5,9 @@
         <%= form_with url: "#", method: :get, class: "d-flex flex-column align-items-center search-form", id: "search-form-home", html: {data: {search_tracks_target: "form"}} do |f| %>
           <div class="position-relative">
             <%= f.text_field :query,
-                             class: "form-control d-flex mb-4",
+                             class: "search-input d-flex mb-4",
                              id: "search-form-search",
+                             placeholder: "Search for your track",
                              value: params[:query],
                              data: {
                                search_tracks_target: "input",
@@ -21,4 +22,3 @@
     </div>
   </div>
 </div>
-
