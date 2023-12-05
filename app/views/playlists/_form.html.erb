@@ -1,6 +1,6 @@
 <%= simple_form_for (@playlist) do |f| %>
   <p><%= f.input :name, placeholder: "Your playlist name", label: false, class: "form-inline" %></p>
-  <p><%= f.input :playlist_image, as: :file, label: false, class: "form-inline" %></p>
+  <p><%= f.input :photo, as: :file, label: false, class: "form-inline" %></p>
   <p><%= f.input :description, placeholder: "Description", label: false, class: "form-inline" %></p>
   <p class="text-center"><%= f.submit "SUBMIT", class: "pink-btn" %></p>
 <% end %>
