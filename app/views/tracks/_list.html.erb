@@ -2,7 +2,7 @@
   <% if @tracks.present? %>
     <ul>
     <% @tracks.each do |track| %>
-
+      <%= link_to({ controller: 'tracks', query: track.id }) do %>
       <div class="card track-card-search">
         <div class="card-body card-body-search">
             <%= image_tag (track.album.images.first["url"]), class: "cover" %>
@@ -10,6 +10,7 @@
             <%= link_to "#{track.artists[0].name}",{ controller: 'tracks', query: track.artists[0].name }, class: "text-artist" %>
         </div>
       </div>
+      <% end %>
     <% end %>
     </ul>
   <% end %>
