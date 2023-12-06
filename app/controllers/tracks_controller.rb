@@ -31,7 +31,6 @@ class TracksController < ApplicationController
         target_valence: params[:valence],
         target_popularity: params[:popularity]
       )
-
     rescue RestClient::TooManyRequests
       redirect_to root_path, alert: "Oops"
     end

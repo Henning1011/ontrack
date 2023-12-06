@@ -26,9 +26,11 @@
         <%= link_to "Back to your playlists", playlists_path, class: "text-btn"%>
       </div>
     </div>
-
-
   </div>
+
+  <div class="create-playlist">
+      <%= link_to 'Push Playlist to Spotify', spotify_playlist_path, data: {turbo_method: :post}, class: "pink-btn-link" %>
+    </div>
 
   <div class="playlist-body">
     <ul>
@@ -45,5 +47,5 @@
       <% end %>
     </ul>
   </div>
-  
+
 </div>
