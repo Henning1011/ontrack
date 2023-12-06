@@ -1,23 +1,25 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8 my-3">
-      <div data-controller="search-tracks">
-        <%= form_with url: "#", method: :get, class: "d-flex flex-column align-items-center search-form", id: "search-form-home", html: {data: {search_tracks_target: "form"}} do |f| %>
-          <div class="position-relative">
-            <%= f.text_field :query,
-                             class: "search-form d-flex mb-4",
-                             id: "search-form-search",
-                             placeholder: "Search for your track",
-                             value: params[:query],
-                             data: {
-                               search_tracks_target: "input",
-                               action: "keyup->search-tracks#update"
-                             }
-                            %>
-            <i class="fa-solid fa-magnifying-glass position-absolute search-icon"></i>
-          </div>
-        <% end %>
-        <%= render "tracks/list", tracks: @tracks %>
+  <div class="banner">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <div data-controller="search-tracks">
+          <%= form_with url: "#", method: :get, class: "d-flex flex-column align-items-center search-form", id: "search-form-home", html: {data: {search_tracks_target: "form"}} do |f| %>
+            <div class="position-relative">
+              <%= f.text_field :query,
+                              class: "search-form d-flex mb-4",
+                              id: "search-form-search",
+                              placeholder: "Search for your track",
+                              value: params[:query],
+                              data: {
+                                search_tracks_target: "input",
+                                action: "keyup->search-tracks#update"
+                              }
+                              %>
+              <i class="fa-solid fa-magnifying-glass position-absolute search-icon"></i>
+            </div>
+          <% end %>
+          <%= render "tracks/list", tracks: @tracks %>
+        </div>
       </div>
     </div>
   </div>
