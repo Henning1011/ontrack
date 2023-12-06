@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :playlists
   get '/playlists/add_one', to: 'playlists#add_one'
 
+  resources :playlist_tracks, only: :destroy
+
   get '/auth/spotify/callback', to: 'users#spotify'
 
   resources :tracks
