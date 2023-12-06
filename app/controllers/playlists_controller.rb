@@ -38,6 +38,7 @@ class PlaylistsController < ApplicationController
 
   def push
     user = RSpotify::User.find(session[:spotify_user]["id"])
+
     spotify_playlist = user.create_playlist!(@playlist.name)
     if spotify_playlist.add_tracks!(@playlist.tracks)
       flash.notice = "Your playlist #{@playlist.name} has been added to Spotify"
