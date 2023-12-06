@@ -6,6 +6,7 @@ class PlaylistTracksController < ApplicationController
     playlist = Playlist.find(params[:playlist_id])
     # get track
     spotify_track = RSpotify::Track.find(params[:spotify_id])
+
     if Track.find_by(spotify_id:params[:spotify_id]).nil?
       track = Track.new(
         spotify_id: spotify_track.id,
@@ -26,12 +27,14 @@ class PlaylistTracksController < ApplicationController
         speechiness: spotify_track.audio_features.speechiness,
         tempo: spotify_track.audio_features.tempo,
         valence: spotify_track.audio_features.valence,
-        popularity: spotify_track.popularity
+        popularity: spotify_track.popularity,
+        uri: spotify_track.uri
       )
       track.save
     else
       track = Track.find_by(spotify_id:params[:spotify_id])
     end
+
     # save track to playlist
     playlist_track = PlaylistTrack.create(playlist_id: playlist.id, track_id: track.id)
     if playlist_track.save

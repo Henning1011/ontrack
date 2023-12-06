@@ -1,5 +1,7 @@
 body {
   background-color: #181A23;
+  margin:0px;
+  padding: 0px;
 }
 
 .container {
@@ -7,8 +9,30 @@ body {
   margin-top: 50px;
 }
 
+.banner {
+
+    background:
+      linear-gradient(to bottom, #181A23 0%, rgba(24, 26, 35, 0) 5%),
+      linear-gradient(to top, #181A23 0%, rgba(24, 26, 35, 0) 5%),
+      linear-gradient(to left, #181A23 0%, rgba(24, 26, 35, 0) 5%),
+      linear-gradient(to right, #181A23 0%, rgba(24, 26, 35, 0) 5%),
+      url('https://i.imgur.com/Iv4no8m.png') center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 #search-form-home {
-  margin-top: 30%;
+  margin-top: 5%;
 }
 
 #search-form-search {
@@ -44,4 +68,3 @@ body {
   font-size: 22px;
   color:#D1166B;
 }
-/*delete comment*/

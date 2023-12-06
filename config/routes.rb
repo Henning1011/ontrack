@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :tracks
 
   post 'playlist_tracks/:playlist_id/:spotify_id', to: 'playlist_tracks#create', as: :playlist_tracks
+  post 'playlist/:id/push', to: 'playlists#push', as: :spotify_playlist
 
   get '/search', to: 'tracks#search'
   get '/enhanced_search', to: 'tracks#enhanced_search'
