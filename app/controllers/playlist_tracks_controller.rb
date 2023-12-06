@@ -24,7 +24,8 @@ class PlaylistTracksController < ApplicationController
       speechiness: spotify_track.audio_features.speechiness,
       tempo: spotify_track.audio_features.tempo,
       valence: spotify_track.audio_features.valence,
-      popularity: spotify_track.popularity
+      popularity: spotify_track.popularity,
+      uri: spotify_track.uri
     )
     track.save
     # save track to playlist
