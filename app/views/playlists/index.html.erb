@@ -31,11 +31,11 @@
           </div>
         <% end %>
         <div class="edit-delete-btns">
-          <%= link_to playlist_path(playlist), data: {turbo_method: :delete, turbo_confirm: "Do you want to delete your playlist?"}, class: "icon-btn" do %>
-            <i class="fa-solid fa-trash"></i>
-          <% end %>
           <%= link_to edit_playlist_path(playlist), class: "icon-btn" do %>
             <i class="fa-solid fa-pen-to-square"></i>
+          <% end %>
+          <%= link_to playlist_path(playlist), data: {turbo_method: :delete, turbo_confirm: "Do you want to delete your playlist?"}, class: "icon-btn" do %>
+            <i class="fa-solid fa-trash"></i>
           <% end %>
         </div>
       </div>
