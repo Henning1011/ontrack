@@ -10,25 +10,35 @@
 
   <div class="container-outer-flex">
     <% @playlists.each do |playlist| %>
-      <a href="<%= playlist_path(playlist) %>" class="card-playlist">
-        <% if playlist.photo.present? %>
-          <%= cl_image_tag playlist.photo.key, class: "playlist-card-image", alt: "Playlist Image" %>
-        <% else %>
-          <p class="playlist-card-image">No playlist image available</p>
+      <div class="card-playlist">
+        <%= link_to playlist_path(playlist) do %>
+          <% if playlist.photo.present? %>
+            <%= cl_image_tag playlist.photo.key, class: "playlist-card-image", alt: "Playlist Image" %>
+          <% else %>
+            <p class="playlist-card-image">No playlist image available</p>
+          <% end %>
+          <div class="card-playlist-infos">
+            <div class="card-playlist-title">
+              <h3><%= playlist.name %></h3>
+            </div>
+            <div class="card-playlist-description">
+              <% if playlist.description? %>
+                <p><%= playlist.description %></p>
+              <% else %>
+                <p><%= playlist.name %> was created by <%= current_user.email %> on <%= playlist.created_at.strftime('%B of %Y') %>.</p>
+              <% end %>
+            </div>
+          </div>
         <% end %>
-        <div class="card-playlist-infos">
-          <div class="card-playlist-title">
-            <h3><%= playlist.name %></h3>
-          </div>
-          <div class="card-playlist-description">
-            <% if playlist.description? %>
-              <p><%= playlist.description %></p>
-            <% else %>
-              <p><%= playlist.name %> was created by <%= current_user.email %> on <%= playlist.created_at.strftime('%B of %Y') %>.</p>
-            <% end %>
-          </div>
+        <div class="edit-delete-btns">
+          <%= link_to edit_playlist_path(playlist), class: "icon-btn" do %>
+            <i class="fa-solid fa-pen-to-square"></i>
+          <% end %>
+          <%= link_to playlist_path(playlist), data: {turbo_method: :delete, turbo_confirm: "Do you want to delete your playlist?"}, class: "icon-btn" do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
         </div>
-      </a>
+      </div>
     <% end %>
   </div>
 </div>

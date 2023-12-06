@@ -4,7 +4,8 @@
   background: linear-gradient(180deg, #3D4354 0%, #2A2E3C 100%);
   border-radius: 5px;
   margin-bottom: 5px;
-  margin-right: 22px;
+  // margin-right: 15px;
+  margin-left: 10px;
 }
 
 .card-body-search {
@@ -34,9 +35,6 @@
   justify-content: center;
 }
 
-.text-title:hover {
-  color: white;
-}
 
 .text-artist {
   font-size: 14px;
@@ -51,6 +49,16 @@
   justify-content: center;
 }
 
-.text-artist:hover {
-  color: white;
+// .text-artist:hover {
+//   color: white;
+// }
+
+// .text-title:hover {
+//   color: white;
+// }
+
+.track-card-search:hover {
+  // background: linear-gradient(180deg, #FF2688 0%, #D1166B 100%);
+  box-shadow: 0px 0px 10px #FF2688;
+  cursor: pointer;
 }
