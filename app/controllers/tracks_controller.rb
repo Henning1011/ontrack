@@ -17,18 +17,23 @@ class TracksController < ApplicationController
   end
 
   def enhanced_search
-    @recommendations = RSpotify::Recommendations.generate(
-      seed_tracks: [params[:spotify_id]],
-      target_acousticness: params[:acousticness],
-      target_danceability: params[:danceability],
-      target_energy: params[:energy],
-      target_instrumentalness: params[:instrumentalness],
-      target_liveness: params[:liveness],
-      target_loudness: params[:loudness],
-      target_speechiness: params[:speechiness],
-      target_valence: params[:valence],
-      target_popularity: params[:popularity]
-    )
+    begin
+      @recommendations = RSpotify::Recommendations.generate(
+        limit: 5,
+        seed_tracks: [params[:spotify_id]],
+        target_acousticness: params[:acousticness],
+        target_danceability: params[:danceability],
+        target_energy: params[:energy],
+        target_instrumentalness: params[:instrumentalness],
+        target_liveness: params[:liveness],
+        target_loudness: params[:loudness],
+        target_speechiness: params[:speechiness],
+        target_valence: params[:valence],
+        target_popularity: params[:popularity]
+      )
+    rescue RestClient::TooManyRequests
+      redirect_to root_path, alert: "Oops"
+    end
     @playlists = Playlist.where(user: current_user)
   end
 

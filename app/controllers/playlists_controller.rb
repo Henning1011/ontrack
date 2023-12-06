@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_action :set_playlist, only: %i[show edit update destroy]
+  before_action :set_playlist, only: %i[show edit update destroy push]
 
   def index
     @playlists = Playlist.all
@@ -34,6 +34,17 @@ class PlaylistsController < ApplicationController
   def destroy
     @playlist.destroy
     redirect_to playlists_path, status: :see_other
+  end
+
+  def push
+    user = RSpotify::User.find(session[:spotify_user]["id"])
+    spotify_playlist = user.create_playlist!(@playlist.name)
+    if spotify_playlist.add_tracks!(@playlist.tracks)
+      flash.notice = "Your playlist #{@playlist.name} has been added to Spotify"
+    else
+      flash.alert = "Your playlist #{@playlist.name} could not be added to Spotify"
+    end
+    redirect_back(fallback_location: root_path)
   end
 
 private

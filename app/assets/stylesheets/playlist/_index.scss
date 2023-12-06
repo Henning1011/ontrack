@@ -1,37 +1,71 @@
+.container-outer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .card-playlist {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 530px;
   width: 300px;
   border-radius: 5px;
   background: linear-gradient(180deg, #3D4354 0%, #2A2E3C 100%);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
 }
 
 .card-playlist:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 1);
-  transform: scale(1.01);;
+  transform: scale(1.01);
 }
 
 .playlist-card-image {
   height: 300px;
-  width: 300px;
+  width: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 }
 
 .card-playlist-infos {
-  display: flex;
   flex-direction: column;
   padding: 15px;
   justify-content: space-between;
   text-decoration: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.container-outer-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.card-playlist-title {
+  margin-bottom: 10px;
+}
+
+.card-playlist-description {
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.edit-delete-btns {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #ABADB3;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.icon-btn:hover {
+  color: white;
 }
 
 a {
