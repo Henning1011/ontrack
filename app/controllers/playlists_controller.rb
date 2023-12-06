@@ -40,7 +40,11 @@ class PlaylistsController < ApplicationController
     user = RSpotify::User.find(session[:spotify_user]["id"])
 
     spotify_playlist = user.create_playlist!(@playlist.name)
-    if spotify_playlist.add_tracks!(@playlist.tracks)
+    # we extract the IDs of each track of the playlist:
+    tracks_ids = @playlist.tracks.pluck(:spotify_id)
+    # tracks becomes an array of tracks because tracks_ids is an array of IDs:
+    tracks = RSpotify::Track.find(tracks_ids)
+    if spotify_playlist.add_tracks!(tracks)
       flash.notice = "Your playlist #{@playlist.name} has been added to Spotify"
     else
       flash.alert = "Your playlist #{@playlist.name} could not be added to Spotify"
