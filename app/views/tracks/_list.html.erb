@@ -6,8 +6,12 @@
         <div class="card track-card-search">
           <div class="card-body card-body-search">
               <%= image_tag (track.album.images.first["url"]), class: "cover" %>
-              <%= link_to "#{track.name}",{ controller: 'tracks', query: track.id }, class: "text-title" %>
-              <%= link_to "#{track.artists[0].name}",{ controller: 'tracks', query: track.id}, class: "text-artist" %>
+              <div class="text-title">
+                <%= "#{track.name}"%>
+              </div>
+              <div class="text-artist">
+                <%= "#{track.artists[0].name}" %>
+              </div>
           </div>
         </div>
       <% end %>
