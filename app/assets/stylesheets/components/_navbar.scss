@@ -36,7 +36,6 @@
   box-shadow: 0 0 1px rgb(21, 21, 21);
   position: relative;
   overflow: hidden;
-
 }
 
 .nav-link:before {
@@ -62,4 +61,16 @@
 .nav-link:hover:before, .nav-link:focus:before, .nav-link:active:before {
   left: 6%;
   right: 6%;
+}
+
+.position-icon {
+  position: absolute;
+  left: 30px;
+  top: 30%;
+  transform: translate(-50%);
+}
+
+.search-nav {
+  color: white;
+  margin-left: 30px;
 }

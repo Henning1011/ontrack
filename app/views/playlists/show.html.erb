@@ -28,8 +28,8 @@
     </div>
   </div>
 
-  <div class="create-playlist">
-      <%= link_to 'Push Playlist to Spotify', spotify_playlist_path, data: {turbo_method: :post}, class: "pink-btn-link" %>
+  <div class="pink-btn-add-to-spotify">
+      <%= link_to 'Add playlist to', spotify_playlist_path, data: {turbo_method: :post}, class:"text-white" %> <%= image_tag ("spotify-48.png"), class: "spotify-icon" %>
     </div>
 
   <div class="playlist-body">
