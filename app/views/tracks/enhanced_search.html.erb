@@ -1,12 +1,25 @@
 <div class="container">
   <div class="row justify-content-center">
+
+  <h1>Your results</h1>
+
+  <h3>The Vibe</h3>
+
+    <ul>
+      <li class="list-group-item">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= params[:spotify_id] %>?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </li>
+    </ul>
+
+  <h3>Tracks based on your pick</h3>
+
     <ul>
       <% @recommendations.tracks.each do |track| %>
         <li class="list-group-item">
         <div class="card track-card border-0">
           <div class="card-body d-flex">
 
-            <div class="p-2 flex-grow-1">
+            <div class="flex-grow-1">
               <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= track.id %>?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
 
