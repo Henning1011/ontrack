@@ -4,26 +4,36 @@ body {
   padding: 0px;
 }
 
+body.home {
+  background-image: url("bg-ontrack2");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .container {
   width: 70%;
   margin-top: 50px;
 }
 
-.banner {
+// .banner {
+//   background-image: url("bg-ontrack");
+//   background-color: #cccccc;
+// }
 
-    background:
-      linear-gradient(to bottom, #181A23 0%, rgba(24, 26, 35, 0) 5%),
-      linear-gradient(to top, #181A23 0%, rgba(24, 26, 35, 0) 5%),
-      linear-gradient(to left, #181A23 0%, rgba(24, 26, 35, 0) 5%),
-      linear-gradient(to right, #181A23 0%, rgba(24, 26, 35, 0) 5%),
-      url('https://i.imgur.com/Iv4no8m.png') center/cover no-repeat;
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-  }
+  //   background:
+  //     linear-gradient(to bottom, #181A23 0%, rgba(24, 26, 35, 0) 5%),
+  //     linear-gradient(to top, #181A23 0%, rgba(24, 26, 35, 0) 5%),
+  //     linear-gradient(to left, #181A23 0%, rgba(24, 26, 35, 0) 5%),
+  //     linear-gradient(to right, #181A23 0%, rgba(24, 26, 35, 0) 5%),
+  //     url('https://i.imgur.com/Iv4no8m.png') center/cover no-repeat;
+  //   height: 100vh;
+  //   width: 100%;
+  //   background-size: cover;
+  //   background-position: center;
+  //   margin: 0;
+  //   padding: 0;
+  // }
 
 
 html, body {
@@ -32,7 +42,7 @@ html, body {
 }
 
 #search-form-home {
-  margin-top: 5%;
+  margin-top: 15%;
 }
 
 #search-form-search {
@@ -44,12 +54,13 @@ html, body {
   padding: 6px 16px;
   font-size: 15px;
   line-height: normal;
+  box-shadow: 0 0 2px #777a91;
 }
 
 #search-form-search:focus {
   outline: none;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: #242632;
 }
 
 .position-relative {
@@ -67,4 +78,8 @@ html, body {
 .fa-solid.fa-magnifying-glass {
   font-size: 22px;
   color:#D1166B;
+}
+
+.title-text {
+  font-weight: 100;
 }

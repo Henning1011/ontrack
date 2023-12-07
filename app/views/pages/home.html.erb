@@ -1,7 +1,10 @@
-<div class="container">
-  <div class="banner">
+<body class="home">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-8 my-3">
+        <div class="slogan row">
+          <h1 class="title-text col-12 text-center">Find the music you love</h1>
+        </div>
         <div data-controller="search-tracks">
           <%= form_with url: "#", method: :get, class: "d-flex flex-column align-items-center search-form", id: "search-form-home", html: {data: {search_tracks_target: "form"}} do |f| %>
             <div class="position-relative">
@@ -23,4 +26,4 @@
       </div>
     </div>
   </div>
-</div>
+</body>
