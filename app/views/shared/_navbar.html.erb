@@ -30,12 +30,13 @@
             <li class="d-none">
               <%= session[:spotify_user] %>
             </li>
+            <li class="nav-link create-playlist-btn">
+              <i class="fa-solid fa-magnifying-glass position-icon text-white"></i> <%= link_to 'Search ', root_path, class: "search-nav"%>
+            </li>
             <li>
               <%= link_to "Playlists", playlists_path, class: "nav-link all-playlists-btn" %>
             </li>
-            <li>
-              <%= link_to '+ Create playlist', new_playlist_path, class: "nav-link create-playlist-btn" %>
-            </li>
+
             <li class="nav-item dropdown">
               <% if session[:spotify_user]["images"].blank? %>
                 <%# User has no Spotify profile picture %>
@@ -49,8 +50,6 @@
                 </a>
               <% end %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               </div>
             </li>

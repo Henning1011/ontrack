@@ -2,7 +2,7 @@ class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[show edit update destroy push]
 
   def index
-    @playlists = Playlist.all
+    @playlists = current_user.playlists
   end
 
   def show
