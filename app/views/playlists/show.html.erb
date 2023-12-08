@@ -21,12 +21,13 @@
       </div>
 
       <div class="playlist_btns">
-        <%= link_to 'Edit playlist', edit_playlist_path, class: "text-btn" %>
-        <%= link_to "Delete your playlist", playlist_path(@playlist), data: {turbo_method: :delete, turbo_confirm: "Do you want to delete your playlist?"}, class: "text-btn"%>
-        <%= link_to "Back to your playlists", playlists_path, class: "text-btn"%>
+        <i class="fa-solid fa-pen-to-square text-white"></i><%= link_to 'Edit', edit_playlist_path, class:"text-white text-btn " %>
+        <i class="fa-solid fa-trash text-white"></i><%= link_to "Delete", playlist_path(@playlist), data: {turbo_method: :delete, turbo_confirm: "Do you want to delete your playlist?"}, class:"text-white text-btn "%>
       </div>
     </div>
   </div>
+
+
 
   <div class="pink-btn-add-to-spotify">
       <%= link_to 'Add playlist to', spotify_playlist_path, data: {turbo_method: :post}, class:"text-white" %> <%= image_tag ("spotify-48.png"), class: "spotify-icon" %>
