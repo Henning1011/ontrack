@@ -2,6 +2,7 @@ class TracksController < ApplicationController
   before_action :set_track, only: %i[index]
 
   def index
+    @playlists = Playlist.where(user: current_user)
   end
 
   def search
