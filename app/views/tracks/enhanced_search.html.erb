@@ -32,8 +32,8 @@
               </div>
 
               <div class="dropdown p-2 align-self-center">
-                <button class="btn all-playlists-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Add to <br>Playlist
+                <button class="btn icon-btn" id="add-to-playlist" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-circle-plus"></i>
                 </button>
                 <ul class="dropdown-menu">
                   <%= render "playlists/add_one", playlists: @playlists, track: track %>
