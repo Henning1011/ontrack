@@ -19,7 +19,7 @@ class TracksController < ApplicationController
   def enhanced_search
     begin
       @recommendations = RSpotify::Recommendations.generate(
-        limit: 5,
+        limit: 12,
         seed_tracks: [params[:spotify_id]],
         target_acousticness: params[:acousticness],
         target_danceability: params[:danceability],
