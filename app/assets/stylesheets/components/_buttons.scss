@@ -83,6 +83,7 @@
   cursor: pointer;
   font-size: 16px;
   padding: 10px;
+  margin-left: 10px;
 }
 
 .icon-btn:hover {
@@ -117,14 +118,16 @@
   font-weight: 700;
   line-height: normal;
   display: block;
-  margin-bottom: 25px;
-  margin-top: 25px;
-  margin-left: 39px;
+  margin: 30px 0px 30px 0px;
 }
 
 .pink-btn-add-to-spotify:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
+}
+
+.container-btn {
+  justify-content: flex-start;
 }
 
 #add-to-playlist {
