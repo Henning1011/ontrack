@@ -27,8 +27,6 @@
     </div>
   </div>
 
-
-
   <div class="pink-btn-add-to-spotify">
       <%= link_to 'Add playlist to', spotify_playlist_path, data: {turbo_method: :post}, class:"text-white" %> <%= image_tag ("spotify-48.png"), class: "spotify-icon" %>
     </div>
@@ -37,12 +35,12 @@
     <ul>
       <% @playlist.tracks.each do |track| %>
         <li class="list-group-item">
-          <div class="card track-card border-0">
+          <div class="card track-card" id="playlist-card">
             <div class="card-body d-flex">
-              <div class="p-2 flex-grow-1">
+              <div class="flex-grow-1">
                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= track.spotify_id %>?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
               </div>
-                <div class="p-2 justify-content-center">
+                <div class="p-2 align-self-center">
                 <% playlist_track = PlaylistTrack.find_by(track:track, playlist:@playlist) %>
                   <%= link_to playlist_track_path(playlist_track), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to remove this track from the playlist?' }, class: 'icon-btn' do %>
                     <i class="fa-solid fa-circle-xmark"></i>
@@ -54,5 +52,4 @@
       <% end %>
     </ul>
   </div>
-
 </div>
