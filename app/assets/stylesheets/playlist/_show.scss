@@ -18,8 +18,9 @@
 }
 
 .playlist_btns {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 20px 60px 20px 60px;
+  justify-content: end;
 }
 
 .spotify-icon {
@@ -33,4 +34,7 @@
   color: white;
 }
 
-
+.page_title {
+  hyphens: auto;
+	text-align: justify
+}
