@@ -39,8 +39,10 @@
 }
 
 .pink-btn:hover,
-.pink-btn:active {
-  transform: scale(1.1);
+.pink-btn:active,
+.pink-btn-link:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 #login-btn {
@@ -94,7 +96,8 @@
 
 #password:hover {
   color: white;
-  transform: scale(1.02);
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .pink-btn-add-to-spotify {
@@ -120,4 +123,15 @@
 .pink-btn-add-to-spotify:hover {
   box-shadow: 0px 0px 10px #FF2688;
   cursor: pointer;
+}
+
+#add-to-playlist {
+  color: #FF2688;
+  font-size: 30px;
+  margin-left: 14px;
+}
+
+#add-to-playlist:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
